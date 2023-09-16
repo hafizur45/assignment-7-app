@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import {BsCurrencyDollar,BsBook} from 'react-icons/bs'
-const CourseCard = ({course}) => {
+const CourseCard = ({course, handleSelectCourse}) => {
     const { id ,courseName, courseDetail,courseImage, price, credit} = course;
   return (
     <div className="bg-white rounded-xl shadow-lg p-5">
@@ -20,7 +20,7 @@ const CourseCard = ({course}) => {
       credit: {credit}hr</span>
         </div>
     <div className="text-center">
-          <button className="btn px-3 py-2 w-4/5  bg-blue-600 rounded text-white hover:bg-blue-700">Select</button>
+          <button onClick={()=> {handleSelectCourse(course)}} className="btn px-3 py-2 w-4/5  bg-blue-600 rounded text-white hover:bg-blue-700">Select</button>
     </div>
     </div>
   );
